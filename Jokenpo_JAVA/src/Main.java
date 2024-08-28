@@ -1,6 +1,10 @@
 import domain.Algoritmo;
 import domain.Jokenpo;
 import domain.Papel;
+import domain.Pedra;
+import domain.Tesoura;
+import domain.Lagarto;
+import domain.Spock;
 import domain.TipoJogada;
 
 import java.util.Random;
@@ -11,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("JoKenPo V0.PAPEL");
         System.out.println("Escolha uma opção.");
-        System.out.println("\nPAPEL. PAPEL - TESOURA. TESOURA - PEDRA. PEDRA");
+        System.out.println("\n1 - PAPEL. 2 - TESOURA. 3 - PEDRA. 4 - LAGARTO. 5 - SPOCK.");
 
         Scanner in = new Scanner(System.in);
 
@@ -38,7 +42,11 @@ public class Main {
     private static Algoritmo getAlgoritmo(TipoJogada tipo) {
         return switch (tipo) {
             case PAPEL -> new Papel();
-            //TODO: Incluir demais statements...
+            case PEDRA -> new Pedra();
+            case TESOURA -> new Tesoura();
+            case SPOCK -> new Spock();
+            case LAGARTO -> new Lagarto();
+
         };
     }
 }
